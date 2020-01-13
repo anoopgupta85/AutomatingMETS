@@ -37,15 +37,15 @@ public class AccountCreationWithDataProvider extends TestBase {
         driver.findElement(By.xpath(or.getProperty("RegisterForaMNsureAcctState_XPATH"))).sendKeys("Minnesota");
         driver.findElement(By.xpath(or.getProperty("RegisterForaMNsureAcctZip_XPATH"))).sendKeys("55077");
         try {
-			Thread.sleep(1000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
-        driver.findElement(By.xpath(or.getProperty("RegisterForaMNsureAcctSSNBox1_XPATH"))).sendKeys("234");
-        driver.findElement(By.xpath(or.getProperty("RegisterForaMNsureAcctSSNBox2_XPATH"))).sendKeys("56");
+        driver.findElement(By.xpath(or.getProperty("RegisterForaMNsureAcctSSNBox1_XPATH"))).sendKeys("444");
+        driver.findElement(By.xpath(or.getProperty("RegisterForaMNsureAcctSSNBox2_XPATH"))).sendKeys("44");
         driver.findElement(By.xpath(or.getProperty("RegisterForaMNsureAcctSSNBox3_XPATH"))).sendKeys(ssn);
         try {
-			Thread.sleep(1000);
+			Thread.sleep(300);
 		} catch (InterruptedException e1) {
 			e1.printStackTrace();
 		}
@@ -55,7 +55,7 @@ public class AccountCreationWithDataProvider extends TestBase {
         element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("PleaseAnsFollQuesNextBtn_XPATH")))); 
         element.click();
         try {
-			Thread.sleep(1000);
+			Thread.sleep(300);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -97,7 +97,7 @@ public class AccountCreationWithDataProvider extends TestBase {
         
         Reporter.log("<br/>");
         Reporter.log("<a target = \"_blank\"href=\"abcd.jpg\"><img src =><</a>");
-        driver.get(config.getProperty("useridcreationSTST1Url"));
+       // driver.get(config.getProperty("useridcreationSTST1Url"));
         
         
 	}

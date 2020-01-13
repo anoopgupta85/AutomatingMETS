@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Page Factories">
+
+<listeners>
+<listener class-name="org.uncommons.reportng.HTMLReporter"/>
+<listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+<listener class-name="com.ag.listeners.CustomListeners"/>
+</listeners>
+  <test thread-count="5" name="UUQHPSmokeTest">
+    <classes>
+      <class name="com.ag.testCases.UUQHPSmokeTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

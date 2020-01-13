@@ -13,27 +13,39 @@ import com.w2a.base.TestBase;
 import com.w2a.utilities.TestUtil;
 
 public class SmokeTest extends TestBase{
+
+	
+/* *********************************************************	
+ * Project : Federal Tax Credit 
+ * @author  Anoop Gupta
+ * @version  4.11.1
+ * @since 2017 - 03 -10
+ * Coding Language Used : Java, Selenium
+ *  
+ * <h1> Submit the Citizen Portal application for Federal Tax Credit Project<h1>
+ * 
+ */
 	
 	@Test(dataProviderClass = TestUtil.class, dataProvider = "dp")
 	public void smokeTest(Hashtable<String,String> data){
 		
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
-		driver.findElement(By.xpath(or.getProperty("LoginPageUserName_XPATH"))).sendKeys(data.get("UserName"));
-		driver.findElement(By.xpath(or.getProperty("LoginPagePassword_XPATH"))).sendKeys(data.get("Password"));
+		driver.findElement(By.xpath(or.getProperty("LoginPageUserName_XPATH"))).sendKeys(data.get("UserName"));   //<Anoop Gupta>Input User Name
+		driver.findElement(By.xpath(or.getProperty("LoginPagePassword_XPATH"))).sendKeys(data.get("Password"));      //<Anoop Gupta>Input Password
 		try {
-			TestUtil.captureScreenshot();
+			TestUtil.captureScreenshot();                                  //<Anoop Gupta> Capture screenshot after input Login and password
 		} catch (IOException e1) {		
 			e1.printStackTrace();
 		}
-		driver.findElement(By.xpath(or.getProperty("LoginPageSignIn_XPATH"))).click();
+		driver.findElement(By.xpath(or.getProperty("LoginPageSignIn_XPATH"))).click();        //<Anoop Gupta> Clicked on SignIn Button
 		wait = new WebDriverWait(driver, 30);
 		((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-		element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("HomePageForIndAndFamContinueBtn_XPATH")))); 
-		element.click();
+		element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("HomePageForIndAndFamContinueBtn_XPATH"))));  // <Anoop Gupta> Wait for Continue button to be enabled.
+		element.click();    // <Anoop Gupta> Click on Continue button.
 		
-		if(data.get("TT").equals("Y")){
+		if(data.get("TT").equals("Y")){                  // <Anoop Gupta> apply condition for Time Travel.
 		
-		// Below code is for Time Travel
+		//<Anoop Gupta> Below code is for Time Travel
 		
 		 try {
 				Thread.sleep(3000);
@@ -41,9 +53,9 @@ public class SmokeTest extends TestBase{
 			e1.printStackTrace();
 			}
 		 
-		 driver.findElement(By.xpath(or.getProperty("LoginForTTUserName_XPATH"))).sendKeys(data.get("UserName"));
-		 driver.findElement(By.xpath(or.getProperty("LoginForTTPswd_XPATH"))).sendKeys(data.get("Password"));
-		 driver.findElement(By.xpath(or.getProperty("LoginForTTSignIn_XPATH"))).click();		 
+		 driver.findElement(By.xpath(or.getProperty("LoginForTTUserName_XPATH"))).sendKeys(data.get("UserName"));  //<Anoop Gupta>Input User Name
+		 driver.findElement(By.xpath(or.getProperty("LoginForTTPswd_XPATH"))).sendKeys(data.get("Password"));  //<Anoop Gupta>Input Password
+		 driver.findElement(By.xpath(or.getProperty("LoginForTTSignIn_XPATH"))).click();		  //<Anoop Gupta> Clicked on SignIn Button
 		
 		 try {
 				Thread.sleep(3000);
@@ -51,9 +63,9 @@ public class SmokeTest extends TestBase{
 			e1.printStackTrace();
 			}
 		}	 
-		 // Until this line it is for TT
+		 //<Anoop Gupta> Until this line it is for TT
 		
-		element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("ApplyandEnrollWithFinancial_XPATH")))); 
+		element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("ApplyandEnrollWithFinancial_XPATH"))));   //<Anoop Gupta> Click on Apply and Enroll with Financial Aid.
         element.click();
         try {
 			Thread.sleep(3000);
@@ -62,7 +74,7 @@ public class SmokeTest extends TestBase{
 			e.printStackTrace();
 		}
         
-        frames = driver.findElements(By.tagName("iframe"));
+        frames = driver.findElements(By.tagName("iframe"));  
         driver.switchTo().frame(0);
         try {
 			Thread.sleep(3000);
@@ -92,6 +104,7 @@ public class SmokeTest extends TestBase{
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
+		   
 		   if (data.get("Env").equals("STST1")){
 		   driver.findElement(By.xpath(or.getProperty("InfAbtyouFrstName_XPATH"))).sendKeys(data.get("Fname"));
 		   driver.findElement(By.xpath(or.getProperty("InfAbtyouLastName_XPATH"))).sendKeys(data.get("Lname"));
@@ -110,11 +123,11 @@ public class SmokeTest extends TestBase{
 			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("InfAbtyouAreuHomelessDD_XPATH"))));
 			 element.click();
 			 driver.findElement(By.xpath(or.getProperty("InfAbtyouNoAmNotHomeLess_XPATH"))).click();
-			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("InfAbtyouAddressLine1_XPATH"))));           // Wait to Click on Address Line 1 
+			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("InfAbtyouAddressLine1_XPATH"))));           //<Anoop Gupta>Wait to Click on Address Line 1 
 			 element.sendKeys("948 field Street");	
 			 driver.findElement(By.xpath(or.getProperty("InfAbtyouAddressLine2_XPATH"))).sendKeys("Near Water tunki");
 			 driver.findElement(By.xpath(or.getProperty("InfAbtyouAptSuit_XPATH"))).sendKeys("12");
-			 driver.findElement(By.xpath(or.getProperty("InfAbtyouCity_XPATH"))).sendKeys("IG");
+			 driver.findElement(By.xpath(or.getProperty("InfAbtyouCity_XPATH"))).sendKeys("IGHeights");
 			 driver.findElement(By.xpath(or.getProperty("InfAbtyouCountyDD_XPATH"))).click();
 			 driver.findElement(By.xpath(or.getProperty("InfAbtyouCountyDakota_XPATH"))).click();
 			 driver.findElement(By.xpath(or.getProperty("InfAbtyouStateDD_XPATH"))).click();
@@ -143,22 +156,24 @@ public class SmokeTest extends TestBase{
 			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MADoYouHaveSSNDD_XPATH")))); 
 			 element.click();
 			 driver.findElement(By.xpath(or.getProperty("MADoYouHaveSSNYes_XPATH"))).click();
-			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MASSNTextBox_XPATH"))));           // Wait to Click on Address Line 1 
+			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MASSNTextBox_XPATH"))));          //<Anoop Gupta> Wait to Click on Address Line 1 
 				// element.sendKeys("444444144");	
 				 element.sendKeys(data.get("SSN"));	
 		
-				 
+				 //<Anoop Gupta> Updated the code for recent application changes due to Federal Tax Credit. 
 				 driver.findElement(By.xpath(or.getProperty("STST1InfyAbtYouSSNReenter_XPATH"))).sendKeys(data.get("SSN"));	 
 				 driver.findElement(By.xpath(or.getProperty("STST1MAAreYouaUSCitizenDD_XPATH"))).click();
 				 driver.findElement(By.xpath(or.getProperty("STST1MAAreYouaUSCitizenYes_XPATH"))).click();
 				 driver.findElement(By.xpath(or.getProperty("STST1MAMoreAboutYouNextBtn_XPATH"))).click();
 				 try {
-						Thread.sleep(12000);
+						Thread.sleep(20000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
-				 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("STST1MASSNConfIsThisCorrectSSNDD_XPATH"))));           // Wait to Click on Next Button on Household section
+			//	 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("STST1MASSNConfIsThisCorrectSSNDD_XPATH"))));           //<Anoop Gupta>Wait to Click on Next Button on Household section
+				 element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(or.getProperty("STST1MASSNConfIsThisCorrectSSNDD_XPATH"))));  
 				 element.click(); 
+				// driver.findElement(By.xpath(or.getProperty("STST1MASSNConfIsThisCorrectSSNDD_XPATH"))).click(); 
 				 driver.findElement(By.xpath(or.getProperty("STST1MASSNConfIsThisCorrectSSNYes_XPATH"))).click();
 				 driver.findElement(By.xpath(or.getProperty("STST1MASSNConfNxtBtn_XPATH"))).click();
 	
@@ -169,14 +184,14 @@ public class SmokeTest extends TestBase{
 				}
 			 
 			
-			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MAPleaseTellUsAbtUrHouseHoldNxtBtn_XPATH"))));           // Wait to Click on Next Button on Household section
+			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MAPleaseTellUsAbtUrHouseHoldNxtBtn_XPATH"))));          //<Anoop Gupta>Wait to Click on Next Button on Household section
 			 element.click();
 			 try {
 					Thread.sleep(5000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MAAnyoneElseInHouseHoldDD_XPATH"))));           // Wait to Click on Drop Down on Other Household Members
+			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MAAnyoneElseInHouseHoldDD_XPATH"))));          //<Anoop Gupta> Wait to Click on Drop Down on Other Household Members
 			 element.click(); 
 			 driver.findElement(By.xpath(or.getProperty("MAAnyoneElseInHouseHoldNo_XPATH"))).click();
 			 driver.findElement(By.xpath(or.getProperty("MAOtherHHMembersNxtBtn_XPATH"))).click();
@@ -185,7 +200,7 @@ public class SmokeTest extends TestBase{
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}			 
-			 element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(or.getProperty("MAAnyoneExpectToFiletaxes_XPATH"))));           // Wait to Click on check box for anyone filinf taxes
+			 element = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(or.getProperty("MAAnyoneExpectToFiletaxes_XPATH"))));         //<Anoop Gupta> Wait to Click on check box for anyone filinf taxes
 			 element.click(); 
 			 
 			 driver.findElement(By.xpath(or.getProperty("MATaxFilerInfoNxtBtn_XPATH"))).click();
@@ -203,14 +218,14 @@ public class SmokeTest extends TestBase{
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MAHHSummaryPageNextBtn_XPATH"))));           // Wait to Click on Next button on Household Summary page
+			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MAHHSummaryPageNextBtn_XPATH"))));         //<Anoop Gupta>Wait to Click on Next button on Household Summary page
 			 element.click();
 			 try {
 					Thread.sleep(7000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MATellUsYourIncomeNxtBtn_XPATH"))));           // Wait to Click on Next button on Tell us your income page
+			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MATellUsYourIncomeNxtBtn_XPATH"))));           //<Anoop Gupta>Wait to Click on Next button on Tell us your income page
 			 element.click();
 			 try {
 					Thread.sleep(8000);
@@ -221,7 +236,7 @@ public class SmokeTest extends TestBase{
 			 
 			System.out.println(AnnualIncome);
 			 
-			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MADoYouHaveAnyIncomeDD_XPATH"))));           // Wait to Click on Drop down on income information page
+			 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("MADoYouHaveAnyIncomeDD_XPATH"))));           //<Anoop Gupta> Wait to Click on Drop down on income information page
 			 element.click();
 			 driver.findElement(By.xpath(or.getProperty("MADoYouHaveAnyIncomeYes_XPATH"))).click();
 			 driver.findElement(By.xpath(or.getProperty("MADoYouHaveAnyIncomeNxtBtn_XPATH"))).click();
@@ -232,16 +247,17 @@ public class SmokeTest extends TestBase{
 				}
 			 
 			 
-			 element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(or.getProperty("MATypeOfIncomeDD_XPATH"))));           // Wait to Click on Income Type Drop down 
+			 element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(or.getProperty("MATypeOfIncomeDD_XPATH"))));          //<Anoop Gupta> Wait to Click on Income Type Drop down 
 			 element.click();
 			 
-			 driver.findElement(By.xpath(or.getProperty("MAIncomeTypeWagesBeforeTaxes_XPATH"))).click();                 // Select Wages Before Taxes
+			 driver.findElement(By.xpath(or.getProperty("MAIncomeTypeWagesBeforeTaxes_XPATH"))).click();                //<Anoop Gupta>Select Wages Before Taxes
 			 try {
 					Thread.sleep(7000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-			 driver.findElement(By.xpath(or.getProperty("MANameOfEmployer_XPATH"))).sendKeys("Walmart");                           // Input Walmart
+			 //<Anoop Gupta> Updated below code to fix defect 33305 and 33306 for Federal Tax Credit Project.
+			 driver.findElement(By.xpath(or.getProperty("MANameOfEmployer_XPATH"))).sendKeys("Walmart");                           //<Anoop Gupta> Input Walmart
 			 driver.findElement(By.xpath(or.getProperty("MASeasonalEmployedDD_XPATH"))).click();
 			 driver.findElement(By.xpath(or.getProperty("MASeasonalEmployedNo_XPATH"))).click();
 			 driver.findElement(By.xpath(or.getProperty("MAIncomeAmount_XPATH"))).sendKeys(data.get("Income"));
@@ -257,7 +273,7 @@ public class SmokeTest extends TestBase{
 				}
 			
 			 
-		 element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(or.getProperty("MAAdditionalIncomeDetailsNxtBtn_XPATH"))));													    // Click on Next Button on Additional income details
+		 element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(or.getProperty("MAAdditionalIncomeDetailsNxtBtn_XPATH"))));													   //<Anoop Gupta> Click on Next Button on Additional income details
 			 element.click();
 			 try {
 					Thread.sleep(5000);
@@ -453,6 +469,7 @@ public class SmokeTest extends TestBase{
 				}
 			 driver.switchTo().defaultContent();
 			 driver.findElement(By.xpath(or.getProperty("SignOutBtn_XPATH"))).click();
+			 
 	}
 	
 	

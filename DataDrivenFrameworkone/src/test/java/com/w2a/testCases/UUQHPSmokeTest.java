@@ -85,8 +85,8 @@ public class UUQHPSmokeTest extends TestBase {
 				e.printStackTrace();
 			}
 		 
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouFrstName_XPATH"))).sendKeys("SSHarry");
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouLastName_XPATH"))).sendKeys("SSCole");
+		 driver.findElement(By.xpath(or.getProperty("InfAbtyouFrstName_XPATH"))).sendKeys("Josh");
+		 driver.findElement(By.xpath(or.getProperty("InfAbtyouLastName_XPATH"))).sendKeys("Kumar");
 		 driver.findElement(By.xpath(or.getProperty("InfAbtyouGenderDD_XPATH"))).click();
 		 driver.findElement(By.xpath(or.getProperty("InfAbtyouGenderMale_XPATH"))).click();
 		 driver.findElement(By.xpath(or.getProperty("InfAbtyouMaritalStatusDD_XPATH"))).click();
@@ -125,7 +125,7 @@ public class UUQHPSmokeTest extends TestBase {
 		// element.sendKeys("567442638");			 
 	 element.sendKeys(data.get("SSN"));	
 	//	 element.sendKeys("234567037");
-	 if (data.get("Env").equals("STST1")){
+	
 		 
 		 driver.findElement(By.xpath(or.getProperty("STST1SSNReenterInputBox_XPATH"))).sendKeys(data.get("SSN"));
 		 driver.findElement(By.xpath(or.getProperty("STST1InJailDD_XPATH"))).click();
@@ -157,35 +157,8 @@ public class UUQHPSmokeTest extends TestBase {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			} 	 
-	 }
-	 else {
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouInJailDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouInJailNo_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouMedicareInsuranceDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouMedicareInsuranceNo_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouTobacoDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouTobacoNo_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouAmericanalaskanDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouAmericanalaskanNo_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouPreferredContactDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouPreferredContactPhone_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouPhoneNmbrBx1_XPATH"))).sendKeys("847");
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouPhoneNmbrBx2_XPATH"))).sendKeys("443");
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouPhoneNmbrBx3_XPATH"))).sendKeys("0001");
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouTypeDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouTypeMobile_XPATH"))).click();
-		 ((JavascriptExecutor)driver).executeScript("scroll(0,400)");
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouVoterRegCardDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouVoterRegCardNo_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouReceiveNoticesDD_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouReceiveNoticesMail_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("InfAbtyouNextButton_XPATH"))).click();
-		 try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			} 
-	 }
+	
+
 		 element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(or.getProperty("OthHHMembAnyOneElseInHHDD_XPATH"))));           // Wait to Click on Address Line 1 
 		 element.click();
 		 driver.findElement(By.xpath(or.getProperty("OthHHMembAnyOneElseInHHNo_XPATH"))).click();
@@ -207,8 +180,8 @@ public class UUQHPSmokeTest extends TestBase {
 		 driver.findElement(By.xpath(or.getProperty("SignatureMNsureAssisterNo_XPATH"))).click();
 		 driver.findElement(By.xpath(or.getProperty("SignatureAppChangesCheckBox_XPATH"))).click();
 		 driver.findElement(By.xpath(or.getProperty("SignaturePPCheckBox_XPATH"))).click();
-		 driver.findElement(By.xpath(or.getProperty("SignatureFName_XPATH"))).sendKeys("SSHarry");
-		 driver.findElement(By.xpath(or.getProperty("SignatureLName_XPATH"))).sendKeys("SSCole");
+		 driver.findElement(By.xpath(or.getProperty("SignatureFName_XPATH"))).sendKeys("Josh");
+		 driver.findElement(By.xpath(or.getProperty("SignatureLName_XPATH"))).sendKeys("Kumar");
 		 driver.findElement(By.xpath(or.getProperty("SignatureSubmitBtn_XPATH"))).click();
 		 Reporter.log("UUQHP application created Successfully - Smoke Test Pass");
 		 try {

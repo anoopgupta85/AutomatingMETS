@@ -112,11 +112,17 @@ public class TestBase {
 				prefs.put("profile.default_content_setting_values.notifications", 2);
 				prefs.put("credentials_enable_service", false);
 				prefs.put("profile.password_manager_enabled", false);
+				prefs.put("profile.useAutomationExtension", false);
 				ChromeOptions options = new ChromeOptions();
+				options.addArguments("--no-sandbox");
 				options.setExperimentalOption("prefs", prefs);
+				options.addArguments("start-maximized");
 				options.addArguments("--disable-extensions");
 				options.addArguments("--disable-infobars");
+				options.addArguments("--disable-gpu");
+				options.addArguments("--disable-dev-shm-usage");
 				options.addArguments("--disable-session-crashed-bubble");
+				options.addArguments("--remote-debugging-port=7780");
 				
 				driver = new ChromeDriver(options);         
 				log.debug("Browser Launched");
@@ -130,7 +136,7 @@ public class TestBase {
 				System.setProperty("webdriver.ie.driver",System.getProperty("user.dir")+"\\src\\test\\resources\\executables\\IEDriverServer.exe");	
 			}
 			
-			driver.get(config.getProperty("CitizenPortalStst2Url"));
+			driver.get(config.getProperty("CitizenPortaliDevUrl"));
 			driver.manage().window().maximize();
 			driver.manage().timeouts().implicitlyWait(Integer.parseInt(config.getProperty("implicitWait")), TimeUnit.SECONDS);
 			log.debug("Citizen Portal Launched");
@@ -212,7 +218,10 @@ public void type( String locator, String value) {
 	public void tearDown(){
 		if(driver != null){
 			
+			
+			
 driver.close();
+
 
 driver.quit();
 

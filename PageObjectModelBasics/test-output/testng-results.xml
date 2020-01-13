@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="34086" started-at="2019-09-10T16:35:26Z" finished-at="2019-09-10T16:36:00Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="34086" started-at="2019-09-10T16:35:26Z" finished-at="2019-09-10T16:36:00Z">
+      <class name="com.w2a.testcases.SmokeTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.w2a.testcases.SmokeTest@66f57048]" name="setUp" is-config="true" duration-ms="250" started-at="2019-09-10T16:35:26Z" finished-at="2019-09-10T16:35:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.w2a.testcases.SmokeTest@66f57048]" name="LaunchBrowser" is-config="true" duration-ms="13319" started-at="2019-09-10T16:35:26Z" finished-at="2019-09-10T16:35:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method status="PASS" signature="smokeTest(java.util.Hashtable)[pri:0, instance:com.w2a.testcases.SmokeTest@66f57048]" name="smokeTest" duration-ms="20078" started-at="2019-09-10T16:35:40Z" data-provider="dp" finished-at="2019-09-10T16:36:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Password=Welcome1#, TT=Y, UserName=zafartc81}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- smokeTest -->
+        <test-method status="PASS" signature="teardown()[pri:0, instance:com.w2a.testcases.SmokeTest@66f57048]" name="teardown" is-config="true" duration-ms="1" started-at="2019-09-10T16:36:01Z" finished-at="2019-09-10T16:36:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.w2a.testcases.SmokeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

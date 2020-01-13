@@ -561,7 +561,7 @@ public class PrismData extends TestBase {
 						  }
 				 driver.findElement(By.xpath(or.getProperty("MAFinalPageSubmitBtn_XPATH"))).click();
 				 try {
-						Thread.sleep(10000);
+						Thread.sleep(15000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}
@@ -571,9 +571,15 @@ public class PrismData extends TestBase {
 						e1.printStackTrace();
 					}
 				 driver.switchTo().defaultContent();
+				 try {
+						Thread.sleep(5000);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				 
 				 driver.findElement(By.xpath(or.getProperty("SignOutBtn_XPATH"))).click();
 				 try {
-						Thread.sleep(20000);
+						Thread.sleep(10000);
 					} catch (InterruptedException e) {
 						e.printStackTrace();
 					}

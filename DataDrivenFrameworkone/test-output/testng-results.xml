@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="514842" started-at="2020-01-10T19:14:59Z" finished-at="2020-01-10T19:23:34Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="514842" started-at="2020-01-10T19:14:59Z" finished-at="2020-01-10T19:23:34Z">
+      <class name="com.w2a.testCases.SmokeTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.w2a.testCases.SmokeTest@3c7f66c4]" name="setUp" is-config="true" duration-ms="125" started-at="2020-01-10T13:14:59Z" finished-at="2020-01-10T13:14:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.w2a.testCases.SmokeTest@3c7f66c4]" name="LaunchBrowser" is-config="true" duration-ms="8868" started-at="2020-01-10T13:14:59Z" finished-at="2020-01-10T13:15:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method status="PASS" signature="smokeTest(java.util.Hashtable)[pri:0, instance:com.w2a.testCases.SmokeTest@3c7f66c4]" name="smokeTest" duration-ms="252484" started-at="2020-01-10T13:15:08Z" data-provider="dp" finished-at="2020-01-10T13:19:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Env=STST1, Password=Welcome1#, Fname=Rany, TT=N, Income=10000, SSN=234567076, Lname=Pavage, UserName=tstidev194}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- smokeTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.w2a.testCases.SmokeTest@3c7f66c4]" name="tearDown" is-config="true" duration-ms="4382" started-at="2020-01-10T13:19:21Z" finished-at="2020-01-10T13:19:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="LaunchBrowser()[pri:0, instance:com.w2a.testCases.SmokeTest@3c7f66c4]" name="LaunchBrowser" is-config="true" duration-ms="3297" started-at="2020-01-10T13:19:25Z" finished-at="2020-01-10T13:19:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LaunchBrowser -->
+        <test-method status="PASS" signature="smokeTest(java.util.Hashtable)[pri:0, instance:com.w2a.testCases.SmokeTest@3c7f66c4]" name="smokeTest" duration-ms="242178" started-at="2020-01-10T13:19:28Z" data-provider="dp" finished-at="2020-01-10T13:23:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Env=STST1, Password=Welcome1#, Fname=Randi, TT=N, Income=10000, SSN=234567077, Lname=Savage, UserName=tstidev195}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- smokeTest -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.w2a.testCases.SmokeTest@3c7f66c4]" name="tearDown" is-config="true" duration-ms="3320" started-at="2020-01-10T13:23:30Z" finished-at="2020-01-10T13:23:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.w2a.testCases.SmokeTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

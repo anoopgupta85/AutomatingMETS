@@ -1,0 +1,42 @@
+16:16:48,803 DEBUG devpinoyLogger:63 - Config File loaded !!!
+16:16:48,848 DEBUG devpinoyLogger:77 - OR File loaded !!!
+16:16:56,802 DEBUG RequestAddCookies:122 - CookieSpec selected: default
+16:16:57,007 DEBUG RequestAuthCache:76 - Auth cache not set in the context
+16:16:57,030 DEBUG PoolingHttpClientConnectionManager:249 - Connection request: [route: {}->http://localhost:12622][total kept alive: 0; route allocated: 0 of 2000; total allocated: 0 of 2000]
+16:16:57,397 DEBUG PoolingHttpClientConnectionManager:282 - Connection leased: [id: 0][route: {}->http://localhost:12622][total kept alive: 0; route allocated: 1 of 2000; total allocated: 1 of 2000]
+16:16:57,425 DEBUG MainClientExec:234 - Opening connection {}->http://localhost:12622
+16:16:57,439 DEBUG DefaultHttpClientConnectionOperator:131 - Connecting to localhost/127.0.0.1:12622
+16:16:57,453 DEBUG DefaultHttpClientConnectionOperator:138 - Connection established 127.0.0.1:61566<->127.0.0.1:12622
+16:16:57,453 DEBUG DefaultManagedHttpClientConnection:90 - http-outgoing-0: set socket timeout to 10800000
+16:16:57,454 DEBUG MainClientExec:255 - Executing request POST /session HTTP/1.1
+16:16:57,455 DEBUG MainClientExec:260 - Target auth state: UNCHALLENGED
+16:16:57,469 DEBUG MainClientExec:266 - Proxy auth state: UNCHALLENGED
+16:16:57,487 DEBUG headers:135 - http-outgoing-0 >> POST /session HTTP/1.1
+16:16:57,488 DEBUG headers:138 - http-outgoing-0 >> Content-Type: application/json; charset=utf-8
+16:16:57,488 DEBUG headers:138 - http-outgoing-0 >> Content-Length: 308
+16:16:57,490 DEBUG headers:138 - http-outgoing-0 >> Host: localhost:12622
+16:16:57,490 DEBUG headers:138 - http-outgoing-0 >> Connection: Keep-Alive
+16:16:57,490 DEBUG headers:138 - http-outgoing-0 >> User-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_121)
+16:16:57,491 DEBUG headers:138 - http-outgoing-0 >> Accept-Encoding: gzip,deflate
+16:16:57,491 DEBUG wire:72 - http-outgoing-0 >> "POST /session HTTP/1.1[\r][\n]"
+16:16:57,491 DEBUG wire:72 - http-outgoing-0 >> "Content-Type: application/json; charset=utf-8[\r][\n]"
+16:16:57,491 DEBUG wire:72 - http-outgoing-0 >> "Content-Length: 308[\r][\n]"
+16:16:57,491 DEBUG wire:72 - http-outgoing-0 >> "Host: localhost:12622[\r][\n]"
+16:16:57,492 DEBUG wire:72 - http-outgoing-0 >> "Connection: Keep-Alive[\r][\n]"
+16:16:57,492 DEBUG wire:72 - http-outgoing-0 >> "User-Agent: Apache-HttpClient/4.5.1 (Java/1.8.0_121)[\r][\n]"
+16:16:57,492 DEBUG wire:72 - http-outgoing-0 >> "Accept-Encoding: gzip,deflate[\r][\n]"
+16:16:57,492 DEBUG wire:72 - http-outgoing-0 >> "[\r][\n]"
+16:16:57,492 DEBUG wire:86 - http-outgoing-0 >> "{"desiredCapabilities":{"browserName":"chrome","chromeOptions":{"args":["--disable-extensions","--disable-infobars"],"extensions":[],"prefs":{"profile.default_content_setting_values.notifications":2,"credentials_enable_service":false,"profile.password_manager_enabled":false}},"version":"","platform":"ANY"}}"
+16:18:00,060 DEBUG wire:72 - http-outgoing-0 << "HTTP/1.1 200 OK[\r][\n]"
+16:18:00,061 DEBUG wire:72 - http-outgoing-0 << "Content-Length:255[\r][\n]"
+16:18:00,061 DEBUG wire:72 - http-outgoing-0 << "Content-Type:application/json; charset=utf-8[\r][\n]"
+16:18:00,061 DEBUG wire:72 - http-outgoing-0 << "Connection:close[\r][\n]"
+16:18:00,061 DEBUG wire:72 - http-outgoing-0 << "[\r][\n]"
+16:18:00,061 DEBUG wire:86 - http-outgoing-0 << "{"sessionId":"3b5d2e1052abcaae22f98fa6dce594ca","status":13,"value":{"message":"unknown error: Chrome failed to start: crashed\n  (Driver info: chromedriver=2.30.477700 (0057494ad8732195794a7b32078424f92a5fce41),platform=Windows NT 6.1.7601 SP1 x86_64)"}}"
+16:18:00,119 DEBUG headers:124 - http-outgoing-0 << HTTP/1.1 200 OK
+16:18:00,119 DEBUG headers:127 - http-outgoing-0 << Content-Length:255
+16:18:00,119 DEBUG headers:127 - http-outgoing-0 << Content-Type:application/json; charset=utf-8
+16:18:00,120 DEBUG headers:127 - http-outgoing-0 << Connection:close
+16:18:00,298 DEBUG DefaultManagedHttpClientConnection:81 - http-outgoing-0: Close connection
+16:18:00,299 DEBUG MainClientExec:103 - Connection discarded
+16:18:00,299 DEBUG PoolingHttpClientConnectionManager:320 - Connection released: [id: 0][route: {}->http://localhost:12622][total kept alive: 0; route allocated: 0 of 2000; total allocated: 0 of 2000]
